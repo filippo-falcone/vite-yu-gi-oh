@@ -3,11 +3,13 @@ import axios from 'axios';
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue';
 import CardsList from './components/CardsList.vue';
+import AppLoader from './components/AppLoader.vue';
 
 export default {
   components: {
     AppHeader,
-    CardsList
+    CardsList,
+    AppLoader
   },
   data() {
     return {
@@ -19,6 +21,7 @@ export default {
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?=&startdate=2000-01-01&enddate=2002-08-23&dateregion=tcg')
       .then((response) => {
         store.cards = response.data.data;
+        store.isLoading = false;
       });
     }
   },
@@ -31,7 +34,8 @@ export default {
 <template>
   <AppHeader></AppHeader>
   <main>
-    <CardsList></CardsList>
+    <AppLoader v-if="store.isLoading"></AppLoader>
+    <CardsList v-else></CardsList>
   </main>
 </template>
 
