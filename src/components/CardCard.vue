@@ -25,7 +25,15 @@ export default {
 .ms-card {
     .img-container {
         img {
+            transition: all 0.5s;
             width: 100%;
+            cursor: pointer;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
         }
     }
 
