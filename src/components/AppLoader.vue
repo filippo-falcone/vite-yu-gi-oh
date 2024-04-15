@@ -9,7 +9,7 @@ export default {
     <div class="container d-flex flex-column justify-content-center align-items-center py-5">
             <h1>Loading...</h1>
             <div class="img-container">
-                <img src="https://steamuserimages-a.akamaihd.net/ugc/1011565208488671455/DC0FEC4441B377442E97AF3E1AAF36D7AD41C5D2/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="">
+                <img src="../assets/img/polymerization.gif" alt="polymerization">
             </div>
     </div>
    </section>
