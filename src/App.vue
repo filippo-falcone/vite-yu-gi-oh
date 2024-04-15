@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     getCardFromApi() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=24&offset=0&')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?=&startdate=2000-01-01&enddate=2002-08-23&dateregion=tcg')
       .then((response) => {
         store.cards = response.data.data;
       });

@@ -14,7 +14,7 @@ export default {
         </div>
         <div class="text-container d-flex flex-column align-items-center">
             <div class="name">{{ cardInfo.name }}</div>
-            <div>{{ cardInfo.race }}</div>
+            <div class="race">{{ cardInfo.race }}</div>
         </div>
     </div>
 </template>
@@ -30,11 +30,14 @@ export default {
     }
 
     .text-container {
-        height: 15%;
         background-color: $brand-primary;
 
         .name {
             font-size: .875rem;
+        }
+
+        .race {
+            color: $brand-light;
         }
     }
 }
