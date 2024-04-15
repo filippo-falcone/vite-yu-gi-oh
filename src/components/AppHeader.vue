@@ -22,5 +22,7 @@ export default {
 
 header {
     background-color: $brand-light;
+    position: sticky;
+    top: 0;
 }
 </style>
