@@ -48,4 +48,9 @@ export default {
 
 <style lang="scss">
 @use './style/generic.scss';
+@use './style/partials/variables' as *;
+
+body {
+    background-color: $brand-primary;
+}
 </style>

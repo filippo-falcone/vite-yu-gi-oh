@@ -7,7 +7,7 @@ export default {
 <template>
    <section>
     <div class="container d-flex flex-column justify-content-center align-items-center py-5">
-            <h1>Loading...</h1>
+            <h1 class="mb-3">Loading...</h1>
             <div class="img-container">
                 <img src="../assets/img/polymerization.gif" alt="polymerization">
             </div>
@@ -19,13 +19,11 @@ export default {
 @use '../style/partials/variables' as *;
 
 section {
-    background-color: $brand-primary;
-
     .container {
-        height: 100dvh;
+        height: 100%;
 
         h1 {
-            color: $brand-light
+            color: $brand-light;
         }
     }
 }
