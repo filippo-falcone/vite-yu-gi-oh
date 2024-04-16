@@ -17,7 +17,14 @@ export default {
 </script>
 
 <template>
-    <div class="text-center">Results: {{ cardLength }} cards </div>
+    <div class="results-num d-flex align-items-center">Results: {{ cardLength }} cards </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@use '../style/partials/variables' as *;
+
+.results-num {
+    color: $brand-light;
+    font-weight: 500;
+}
+</style>
