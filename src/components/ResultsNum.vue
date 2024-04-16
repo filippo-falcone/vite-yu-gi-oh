@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="results-num d-flex align-items-center">Results: {{ cardLength }} cards </div>
+    <div class="results-num d-flex justify-content-center align-items-center">Results: {{ cardLength }} cards </div>
 </template>
 
 <style scoped lang="scss">

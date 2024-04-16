@@ -31,6 +31,12 @@ export default {
       } else if (store.filterArchetype !== '') {
         this.queryParams.archetype = store.filterArchetype;
       }
+      // Limit filter
+      if (store.filterLimit === '') {
+        this.queryParams.num = 24;
+      } else if (store.filterLimit !== '') {
+        this.queryParams.num = store.filterLimit;
+      }
       axios.get(apiUrl, {
         params: this.queryParams
       })
