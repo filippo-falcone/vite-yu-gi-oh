@@ -11,6 +11,7 @@ export default {
     data() {
         return {
             store,
+            archetypes: [],
             isActive: null
         };
     },
@@ -18,11 +19,7 @@ export default {
         getArchetypesfromApi() {
             axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
             .then((response) => {
-                store.archetypes = response.data;
-                store.archetypes.unshift({
-                    archetype_name: 'Archetype',
-                });
-                store.filterArchetype = store.archetypes[0].archetype_name;
+                this.archetypes = response.data;
             })
         },
         openFilter() {
@@ -43,7 +40,8 @@ export default {
     <div class="container py-4">
         <div class="archetypes-container" :class="isActive">
             <select class="archetypes" name="archetypes" @change="$emit('filter')" v-model="store.filterArchetype">
-                <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
+                <option value="">Archetypes</option>
+                <option v-for="archetype in archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
         </div>
         <div class="d-flex justify-content-center pb-3">

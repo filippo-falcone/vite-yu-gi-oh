@@ -3,6 +3,5 @@ import { reactive } from "vue";
 export const store = reactive({
     cards: [],
     isLoading: true,
-    archetypes: [],
-    filterArchetype: 'Archetype'
+    filterArchetype: ''
 });

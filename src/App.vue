@@ -26,9 +26,9 @@ export default {
     getCardFromApi() {
       let apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
       // Archetype filter
-      if (store.filterArchetype === 'Archetype') {
-        this.queryParams.archetype = undefined;
-      } else {
+      if (store.filterArchetype === '') {
+        this.queryParams.archetype = null;
+      } else if (store.filterArchetype !== '') {
         this.queryParams.archetype = store.filterArchetype;
       }
       axios.get(apiUrl, {
