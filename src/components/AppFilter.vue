@@ -41,7 +41,7 @@ export default {
 
 <template>
     <div class="container py-4">
-        <div class="archetypes-container" :class="isActive">
+        <div class="archetypes-container pb-3" :class="isActive">
             <select class="archetypes" name="archetypes" @change="$emit('filter')" v-model="store.filterArchetype">
                 <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
