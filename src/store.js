@@ -3,6 +3,11 @@ import { reactive } from "vue";
 export const store = reactive({
     cards: [],
     isLoading: true,
+    filterLimit: '',
+    filterType: '',
+    filterAttribute: '',
+    filterRace: '',
     filterArchetype: '',
-    filterLimit: ''
+    filterFormat: '',
+    filterEffect: ''
 });

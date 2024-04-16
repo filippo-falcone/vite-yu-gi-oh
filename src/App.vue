@@ -25,17 +25,47 @@ export default {
   methods: {
     getCardFromApi() {
       let apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+      // Limit filter
+      if (store.filterLimit === '') {
+        this.queryParams.num = 24;
+      } else if (store.filterLimit !== '') {
+        this.queryParams.num = store.filterLimit;
+      }
+      // Type filter
+      if (store.filterType === '') {
+        this.queryParams.type = null;
+      } else if (store.filterType !== '') {
+        this.queryParams.type = store.filterType;
+      }
+      // Attribute filter
+      if (store.filterAttribute === '') {
+        this.queryParams.attribute = null;
+      } else if (store.filterAttribute !== '') {
+        this.queryParams.attribute = store.filterAttribute;
+      }
+      // Race filter
+      if (store.filterRace === '') {
+        this.queryParams.race = null;
+      } else if (store.filterRace !== '') {
+        this.queryParams.race = store.filterRace;
+      }
       // Archetype filter
       if (store.filterArchetype === '') {
         this.queryParams.archetype = null;
       } else if (store.filterArchetype !== '') {
         this.queryParams.archetype = store.filterArchetype;
       }
-      // Limit filter
-      if (store.filterLimit === '') {
-        this.queryParams.num = 24;
-      } else if (store.filterLimit !== '') {
-        this.queryParams.num = store.filterLimit;
+      // Format filter
+      if (store.filterFormat === '') {
+        this.queryParams.format = null;
+      } else if (store.filterFormat !== '') {
+        this.queryParams.format = store.filterFormat;
+      }
+      // Effect filter
+      if (store.filterEffect === '') {
+        this.queryParams.effect = null;
+      } else if (store.filterEffect !== '') {
+        this.queryParams.effect = store.filterEffect;
       }
       axios.get(apiUrl, {
         params: this.queryParams
