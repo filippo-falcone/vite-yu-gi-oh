@@ -14,7 +14,7 @@ export default {
         </div>
         <div class="text-container d-flex flex-column align-items-center justify-content-between flex-grow-1">
             <div class="name">{{ cardInfo.name }}</div>
-            <div class="race">{{ cardInfo.race }}</div>
+            <div v-if="cardInfo.archetype" class="archetype">{{ cardInfo.archetype }}</div>
         </div>
     </div>
 </template>
@@ -44,7 +44,7 @@ export default {
             font-size: .875rem;
         }
 
-        .race {
+        .archetype {
             color: $brand-light;
         }
     }
