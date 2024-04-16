@@ -1,9 +1,13 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
+import ResultsNum from './ResultsNum.vue';
 
 export default {
     name: 'AppFilter',
+    components: {
+        ResultsNum
+    },
     data() {
         return {
             store
@@ -28,10 +32,11 @@ export default {
 </script>
 
 <template>
-    <div class="container py-5">
+    <div class="container py-4">
         <select name="archetypes" @change="$emit('filter')" v-model="store.filterArchetype">
             <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
         </select>
+        <ResultsNum></ResultsNum>
     </div>
 </template>
 
