@@ -138,6 +138,14 @@ export default {
 
 <template>
     <div class="container py-4">
+        <div class="input-group mb-4">
+            <span class="search-icon input-group-text" @click="$emit('filter')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </span>
+            <input type="search" class="form-control" placeholder="Search" v-model="store.filterSearch" @keyup="$emit('filter')">
+        </div>
         <form class="row row-cols-3 row-cols-lg-6 justify-content-center pb-4 g-3" :class="isActive">
             <div class="col">
                 <select class="filter types" name="types" v-model="store.filterType" @change="$emit('filter')">
@@ -202,6 +210,12 @@ export default {
 @use '../style/partials/variables' as *;
 
 .container {
+    .input-group {
+        .search-icon {
+            cursor: pointer;
+        }
+    }
+
     form {
         background-color: $brand-light;
         border-radius: 10px;

@@ -25,6 +25,12 @@ export default {
   methods: {
     getCardFromApi() {
       let apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+      // Search filter
+      if(store.filterSearch === '') {
+        this.queryParams.fname = store.filterSearch;
+      } else if (store.filterSearch !== '') {
+        this.queryParams.fname = store.filterSearch;
+      }
       // Limit filter
       if (store.filterLimit === '') {
         this.queryParams.num = 24;
